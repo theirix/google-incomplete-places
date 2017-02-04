@@ -20,7 +20,7 @@ def search(gmaps, search_query, search_type, pages, language):
         else:
             response = gmaps.places(search_query, language=language,
                                     location=(55.749780, 37.633992),
-                                    radius=15000, types=search_type)
+                                    radius=15000, type=search_type)
         print(repr(response))
         place_ids.extend(list(result.get('place_id') for result in response.get('results', [])
                               if not result.get('permanently_closed', False)))
